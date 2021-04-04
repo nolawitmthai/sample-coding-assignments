@@ -1,1 +1,1 @@
-# sample-coding-projects
+Hello and welcome to my Github! This folder will house coding assignments I've done in classes. When opening each file, click the three dots next to the file name to view the assignment description. Happy browsing!
