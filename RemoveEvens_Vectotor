@@ -5,7 +5,6 @@ using namespace std;
 void removeEvens(const vector<int> &nums, vector<int> &odds);
 
 int main() {
-
 	vector<int> input(9, 0);
 	vector<int> result;
 	int NUM_VALS = 0;
