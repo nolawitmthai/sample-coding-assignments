@@ -1,0 +1,39 @@
+#include <iostream>
+#include <vector>
+using namespace std;
+
+void removeEvens(const vector<int> &nums, vector<int> &odds);
+
+int main() {
+
+	vector<int> input(9, 0);
+  
+	vector<int> result;
+	removeEvens(input, result); // Should return result with [1, 3, 5, 7, 9]
+
+	for (size_t i = 0; i < result.size(); ++i) {
+		cout << result.at(i);
+	}
+	cout << endl;
+
+
+	return 0;
+}
+
+void removeEvens(const vector<int> &nums, vector<int> &odds) {
+   unsigned int i = 0;
+   unsigned int j = 0;
+   int tempVal = 0;
+      
+   for (i = 0; i < nums.size(); i++) {
+      if (((abs(nums.at(i) % 2))) != 1) {
+      }
+      else {
+         tempVal = nums.at(i);
+         odds.push_back(tempVal);
+         cout << odds.at(j);
+         
+         j++;
+      }
+   }
+}
