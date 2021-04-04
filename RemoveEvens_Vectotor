@@ -7,15 +7,16 @@ void removeEvens(const vector<int> &nums, vector<int> &odds);
 int main() {
 
 	vector<int> input(9, 0);
-  
 	vector<int> result;
-	removeEvens(input, result); // Should return result with [1, 3, 5, 7, 9]
-
-	for (size_t i = 0; i < result.size(); ++i) {
-		cout << result.at(i);
+	int NUM_VALS = 0;
+	
+	cin >> NUM_VALS;
+	
+	for (size_t i = 0; i < NUM_VALS; ++i) {
+		cin>> input.at(i);
 	}
-	cout << endl;
 
+	removeEvens(input, result);
 
 	return 0;
 }
