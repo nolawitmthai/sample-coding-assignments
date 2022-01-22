@@ -1,0 +1,50 @@
+#include <fstream>
+#include <iostream>
+#include <cstdlib>
+
+using namespace std;
+
+int charCnt(string fileName, char ch);
+
+int main() {
+   string filename;
+   char ch;
+   int chCnt = 0;
+   
+   cout << "Enter the name of the input file: ";
+   cin >> filename;
+   cout << endl;
+   cout << "Enter a character: ";
+   cin.ignore(); // ignores newline left in stream after previous input statement
+   cin.get(ch);
+   cout << endl;
+
+   chCnt = charCnt(filename, ch);
+
+    cout << "# of " << ch << "'s: " << chCnt << endl;
+   
+   return 0;
+}
+
+int charCnt(string fileName, char ch) {
+    ifstream inFS;
+    int charCount;
+    char charFound;
+    
+    inFS.open(fileName);
+
+    if(!inFS.is_open()) {
+        cout << "Error opening " << fileName << endl;
+        exit (1);
+    }
+    
+    while (inFS.get(charFound)) {
+        if(charFound == ch) {
+            charCount++;
+        }
+    }
+    
+    inFS.close();
+    
+    return charCount;
+}
