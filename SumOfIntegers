@@ -1,0 +1,48 @@
+#include <fstream>
+#include <iostream>
+#include <cstdlib> //needed for exit function
+
+using namespace std;
+
+int fileSum(string fileName);
+
+int main() {
+
+   string filename;
+   int sum = 0;
+   
+   cout << "Enter the name of the input file: ";
+   cin >> filename;
+   cout << endl;
+   
+   sum = fileSum(filename);
+
+   if(sum == 1) {
+       return 1;
+   }
+    
+   cout << "Sum: " << sum << endl;
+    
+   return 0;
+}
+
+int fileSum(string fileName) {
+    ifstream inFS;
+    int sumOfInts = 0;
+    int sum = 0;
+    
+    inFS.open(fileName);
+    
+    if(!inFS.is_open()) {
+        cout << "Error opening " << fileName << endl;
+        return 1;
+    }
+    
+    while (inFS >> sum) {
+        sumOfInts += sum;
+    }
+    
+    inFS.close();
+    
+    return sumOfInts;
+}
